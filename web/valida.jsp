@@ -1,4 +1,4 @@
-<%@page import="controller.MembroController"%>
+<%@page import="controller.PetController"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Validação</title>
+    <title>PetShop - Cadastro</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -14,19 +14,19 @@
 <main class="container">
 
 <%
-String nome = request.getParameter("nome");
-String cpf = request.getParameter("cpf");
-String estado = request.getParameter("estado");
-String email = request.getParameter("email");
-String categoria = request.getParameter("categoria");
-String rank = request.getParameter("rank");
+String nomeAnimal = request.getParameter("nomeAnimal");
+String especie = request.getParameter("especie");
+String raca = request.getParameter("raca");
+String tutorEmail = request.getParameter("tutorEmail");
+String porte = request.getParameter("porte");
+String peso = request.getParameter("peso");
 
-MembroController controller = new MembroController();
-controller.salvar(nome, cpf, estado, email, categoria, rank);
+PetController controller = new PetController();
+controller.salvar(nomeAnimal, especie, raca, tutorEmail, porte, peso);
 %>
 
     <div class="status-box success">
-        <h2>Seja bem vindo à equipe!</h2>
+        <h2>Pet cadastrado com sucesso!</h2>
     </div>
 
     <div class="actions">
@@ -35,7 +35,7 @@ controller.salvar(nome, cpf, estado, email, categoria, rank);
         </a>
 
         <a href="listar.jsp">
-            <button type="button">Membros</button>
+            <button type="button">Ver Pets</button>
         </a>
     </div>
 

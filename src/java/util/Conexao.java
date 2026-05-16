@@ -8,7 +8,7 @@ public class Conexao {
         try {
             Class.forName("org.mariadb.jdbc.Driver"); 
             Connection conn = DriverManager.getConnection(
-                "jdbc:mariadb://localhost:3306/sistema_membros?" +
+                "jdbc:mariadb://localhost:3306/petshop?" +
                 "useSSL=false&" +
                 "serverTimezone=UTC",
                 "root",
