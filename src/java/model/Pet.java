@@ -5,6 +5,7 @@ public class Pet {
     private String nomeAnimal;
     private String especie;
     private String raca;
+    private String tutorNome;
     private String tutorEmail;
     private String porte;
     private String peso;
@@ -20,6 +21,9 @@ public class Pet {
 
     public String getRaca() { return raca; }
     public void setRaca(String raca) { this.raca = raca; }
+
+    public String getTutorNome() { return tutorNome; }
+    public void setTutorNome(String tutorNome) { this.tutorNome = tutorNome; }
 
     public String getTutorEmail() { return tutorEmail; }
     public void setTutorEmail(String tutorEmail) { this.tutorEmail = tutorEmail; }

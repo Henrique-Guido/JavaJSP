@@ -9,16 +9,17 @@ import util.Conexao;
 public class PetDAO {
 
     public void inserir(Pet f) {
-        String sql = "INSERT INTO pets (nome_animal, especie, raca, tutor_email, porte, peso) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO pets (nome_animal, especie, raca, tutor_nome, tutor_email, porte, peso) VALUES (?, ?, ?, ?, ?, ?, ?)";
         try {
             Connection conn = Conexao.conectar();
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, f.getNomeAnimal());
             stmt.setString(2, f.getEspecie());
             stmt.setString(3, f.getRaca());
-            stmt.setString(4, f.getTutorEmail());
-            stmt.setString(5, f.getPorte());
-            stmt.setString(6, f.getPeso());
+            stmt.setString(4, f.getTutorNome());
+            stmt.setString(5, f.getTutorEmail());
+            stmt.setString(6, f.getPorte());
+            stmt.setString(7, f.getPeso());
             stmt.executeUpdate();
             stmt.close();
             conn.close();
@@ -40,6 +41,7 @@ public class PetDAO {
                 f.setNomeAnimal(rs.getString("nome_animal"));
                 f.setEspecie(rs.getString("especie"));
                 f.setRaca(rs.getString("raca"));
+                f.setTutorNome(rs.getString("tutor_nome"));
                 f.setTutorEmail(rs.getString("tutor_email"));
                 f.setPorte(rs.getString("porte"));
                 f.setPeso(rs.getString("peso"));
@@ -55,17 +57,18 @@ public class PetDAO {
     }
 
     public void atualizar(Pet f) {
-        String sql = "UPDATE pets SET nome_animal=?, especie=?, raca=?, tutor_email=?, porte=?, peso=? WHERE id=?";
+        String sql = "UPDATE pets SET nome_animal=?, especie=?, raca=?, tutor_nome=?, tutor_email=?, porte=?, peso=? WHERE id=?";
         try {
             Connection conn = Conexao.conectar();
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, f.getNomeAnimal());
             stmt.setString(2, f.getEspecie());
             stmt.setString(3, f.getRaca());
-            stmt.setString(4, f.getTutorEmail());
-            stmt.setString(5, f.getPorte());
-            stmt.setString(6, f.getPeso());
-            stmt.setInt(7, f.getId());
+            stmt.setString(4, f.getTutorNome());
+            stmt.setString(5, f.getTutorEmail());
+            stmt.setString(6, f.getPorte());
+            stmt.setString(7, f.getPeso());
+            stmt.setInt(8, f.getId());
             stmt.executeUpdate();
             stmt.close();
             conn.close();
@@ -102,6 +105,7 @@ public class PetDAO {
                 f.setNomeAnimal(rs.getString("nome_animal"));
                 f.setEspecie(rs.getString("especie"));
                 f.setRaca(rs.getString("raca"));
+                f.setTutorNome(rs.getString("tutor_nome"));
                 f.setTutorEmail(rs.getString("tutor_email"));
                 f.setPorte(rs.getString("porte"));
                 f.setPeso(rs.getString("peso"));

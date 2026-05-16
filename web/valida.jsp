@@ -1,5 +1,5 @@
 <%@page import="controller.PetController"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -14,15 +14,17 @@
 <main class="container">
 
 <%
+request.setCharacterEncoding("UTF-8");
 String nomeAnimal = request.getParameter("nomeAnimal");
 String especie = request.getParameter("especie");
 String raca = request.getParameter("raca");
+String tutorNome = request.getParameter("tutorNome");
 String tutorEmail = request.getParameter("tutorEmail");
 String porte = request.getParameter("porte");
 String peso = request.getParameter("peso");
 
 PetController controller = new PetController();
-controller.salvar(nomeAnimal, especie, raca, tutorEmail, porte, peso);
+controller.salvar(nomeAnimal, especie, raca, tutorNome, tutorEmail, porte, peso);
 %>
 
     <div class="status-box success">

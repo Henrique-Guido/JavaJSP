@@ -7,11 +7,12 @@ import dao.PetDAO;
 public class PetController {
     private PetDAO dao = new PetDAO();
 
-    public void salvar(String nomeAnimal, String especie, String raca, String tutorEmail, String porte, String peso) {
+    public void salvar(String nomeAnimal, String especie, String raca, String tutorNome, String tutorEmail, String porte, String peso) {
         Pet f = new Pet();
         f.setNomeAnimal(nomeAnimal);
         f.setEspecie(especie);
         f.setRaca(raca);
+        f.setTutorNome(tutorNome);
         f.setTutorEmail(tutorEmail);
         f.setPorte(porte);
         f.setPeso(peso);
@@ -22,12 +23,13 @@ public class PetController {
         return dao.listar();
     }
 
-    public void atualizar(int id, String nomeAnimal, String especie, String raca, String tutorEmail, String porte, String peso) {
+    public void atualizar(int id, String nomeAnimal, String especie, String raca, String tutorNome, String tutorEmail, String porte, String peso) {
         Pet f = dao.buscar(id);
         if (f != null) {
             f.setNomeAnimal(nomeAnimal);
             f.setEspecie(especie);
             f.setRaca(raca);
+            f.setTutorNome(tutorNome);
             f.setTutorEmail(tutorEmail);
             f.setPorte(porte);
             f.setPeso(peso);

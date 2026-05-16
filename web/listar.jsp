@@ -1,3 +1,4 @@
+<%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
 <%@page import="model.Pet"%>
 <%@page import="controller.PetController"%>
@@ -24,6 +25,7 @@
                     <th>Nome do Animal</th>
                     <th>Espécie</th>
                     <th>Raça</th>
+                    <th>Nome do Tutor</th>
                     <th>Email do Tutor</th>
                     <th>Porte</th>
                     <th>Peso (kg)</th>
@@ -43,6 +45,7 @@ for(Pet f : lista){
                     <td><%= f.getNomeAnimal() %></td>
                     <td><%= f.getEspecie() %></td>
                     <td><%= f.getRaca() %></td>
+                    <td><%= f.getTutorNome() %></td>
                     <td><%= f.getTutorEmail() %></td>
                     <td><%= f.getPorte() %></td>
                     <td><%= f.getPeso() %></td>

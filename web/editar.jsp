@@ -1,6 +1,6 @@
 <%@page import="model.Pet"%>
 <%@page import="controller.PetController"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -46,6 +46,11 @@
     <div class="form-group">
         <label for="raca">Raça</label>
         <input type="text" id="raca" name="raca" value="<%= f.getRaca() %>" required>
+    </div>
+
+    <div class="form-group">
+        <label for="tutorNome">Nome do Tutor</label>
+        <input type="text" id="tutorNome" name="tutorNome" value="<%= f.getTutorNome() %>" required>
     </div>
 
     <div class="form-group">
