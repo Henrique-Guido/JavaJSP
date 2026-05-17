@@ -1,12 +1,12 @@
-<%@page import="controller.MembroController"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="controller.PetController"%>
+<%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atualizando</title>
+    <title>PetShop - Atualizando</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -14,29 +14,31 @@
 <main class="container">
 
 <%
+request.setCharacterEncoding("UTF-8");
 int id = Integer.parseInt(request.getParameter("id"));
-String nome = request.getParameter("nome");
-String cpf = request.getParameter("cpf");
-String estado = request.getParameter("estado");
-String email = request.getParameter("email");
-String categoria = request.getParameter("categoria");
-String rank = request.getParameter("rank");
+String nomeAnimal = request.getParameter("nomeAnimal");
+String especie = request.getParameter("especie");
+String raca = request.getParameter("raca");
+String tutorNome = request.getParameter("tutorNome");
+String tutorEmail = request.getParameter("tutorEmail");
+String porte = request.getParameter("porte");
+String peso = request.getParameter("peso");
 
-MembroController controller = new MembroController();
-controller.atualizar(id, nome, cpf, estado, email, categoria, rank);
+PetController controller = new PetController();
+controller.atualizar(id, nomeAnimal, especie, raca, tutorNome, tutorEmail, porte, peso);
 %>
 
     <div class="status-box success">
-        <h3>Atualizado com sucesso!</h3>
+        <h3>Pet atualizado com sucesso!</h3>
     </div>
 
     <div class="actions">
         <a href="listar.jsp">
-            <button type="button">Membros</button>
+            <button type="button">Ver Pets</button>
         </a>
 
         <a href="index.html">
-            <button type="button">Adicinar Membro</button>
+            <button type="button">Cadastrar Pet</button>
         </a>
     </div>
 

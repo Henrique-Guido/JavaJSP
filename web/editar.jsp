@@ -1,25 +1,25 @@
-<%@page import="model.Membros"%>
-<%@page import="controller.MembroController"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="model.Pet"%>
+<%@page import="controller.PetController"%>
+<%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Informações de Membro</title>
+    <title>PetShop - Editar Pet</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <main class="container">
 
-    <h2>Editar Informações de Membro</h2>
+    <h2>Editar Informações do Pet</h2>
 
 <%
     int id = Integer.parseInt(request.getParameter("id"));
-    MembroController controller = new MembroController();
-    Membros f = controller.buscar(id);
+    PetController controller = new PetController();
+    Pet f = controller.buscar(id);
 %>
 
 <% if(f != null) { %>
@@ -34,33 +34,38 @@
     </div>
 
     <div class="form-group">
-        <label for="nome">Nome</label>
-        <input type="text" id="nome" name="nome" value="<%= f.getNome() %>" required>
+        <label for="nomeAnimal">Nome do Animal</label>
+        <input type="text" id="nomeAnimal" name="nomeAnimal" value="<%= f.getNomeAnimal() %>" required>
     </div>
 
     <div class="form-group">
-        <label for="cpf">CPF</label>
-        <input type="text" id="cpf" name="cpf" value="<%= f.getCpf() %>" required>
+        <label for="especie">Espécie</label>
+        <input type="text" id="especie" name="especie" value="<%= f.getEspecie() %>" required>
     </div>
 
     <div class="form-group">
-        <label for="estado">Estado</label>
-        <input type="text" id="estado" name="estado" value="<%= f.getEstado() %>" required>
+        <label for="raca">Raça</label>
+        <input type="text" id="raca" name="raca" value="<%= f.getRaca() %>" required>
     </div>
 
     <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" value="<%= f.getEmail() %>" required>
+        <label for="tutorNome">Nome do Tutor</label>
+        <input type="text" id="tutorNome" name="tutorNome" value="<%= f.getTutorNome() %>" required>
     </div>
 
     <div class="form-group">
-        <label for="categoria">Categoria</label>
-        <input type="tel" id="categoria" name="categoria" value="<%= f.getCategoria() %>">
+        <label for="tutorEmail">Email do Tutor</label>
+        <input type="email" id="tutorEmail" name="tutorEmail" value="<%= f.getTutorEmail() %>">
     </div>
 
     <div class="form-group">
-        <label for="rank">Rank</label>
-        <input type="text" id="rank" name="rank" value="<%= f.getRank() %>">
+        <label for="porte">Porte</label>
+        <input type="text" id="porte" name="porte" value="<%= f.getPorte() %>">
+    </div>
+
+    <div class="form-group">
+        <label for="peso">Peso (kg)</label>
+        <input type="number" id="peso" name="peso" value="<%= f.getPeso() %>" step="0.1">
     </div>
 
     <div class="form-actions">
@@ -72,14 +77,14 @@
 <% } else { %>
 
 <div class="status-box error">
-    <h3>Membro não encontrado</h3>
+    <h3>Pet não encontrado</h3>
 </div>
 
 <% } %>
 
 <div class="actions">
     <a href="listar.jsp">
-        <button type="button">Membros</button>
+        <button type="button">Ver Pets</button>
     </a>
 </div>
 

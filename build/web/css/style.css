@@ -36,7 +36,7 @@ body {
 h2 {
     text-align: center;
     margin-bottom: 25px;
-    color: #38bdf8;
+    color: #10b981;
     font-weight: 600;
 }
 
@@ -70,8 +70,8 @@ input::placeholder {
 
 input:focus {
     outline: none;
-    border-color: #38bdf8;
-    box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.25);
+    border-color: #10b981;
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.25);
 }
 
 /* ================= BOTÕES ================= */
@@ -90,12 +90,12 @@ button {
 
 /* Primário */
 input[type="submit"] {
-    background: #38bdf8;
+    background: #10b981;
     color: #020617;
 }
 
 input[type="submit"]:hover {
-    background: #0ea5e9;
+    background: #059669;
 }
 
 /* Secundário */
@@ -111,12 +111,12 @@ input[type="reset"]:hover {
 /* Botão outline */
 button {
     background: transparent;
-    border: 1px solid #38bdf8;
-    color: #38bdf8;
+    border: 1px solid #10b981;
+    color: #10b981;
 }
 
 button:hover {
-    background: #38bdf8;
+    background: #10b981;
     color: #020617;
 }
 
@@ -140,9 +140,9 @@ button:hover {
 }
 
 .status-box.loading {
-    background: rgba(56, 189, 248, 0.08);
-    border: 1px solid rgba(56, 189, 248, 0.3);
-    color: #38bdf8;
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #10b981;
 }
 
 .status-box.success {
@@ -165,13 +165,13 @@ button:hover {
 
 /* Cabeçalho */
 .modern-table thead {
-    background: rgba(56, 189, 248, 0.1);
+    background: rgba(16, 185, 129, 0.1);
 }
 
 .modern-table th {
     padding: 12px;
     text-align: left;
-    color: #38bdf8;
+    color: #10b981;
     font-weight: 500;
     border-bottom: 1px solid rgba(148, 163, 184, 0.2);
 }
@@ -184,7 +184,7 @@ button:hover {
 
 /* Hover */
 .modern-table tbody tr:hover {
-    background: rgba(56, 189, 248, 0.05);
+    background: rgba(16, 185, 129, 0.05);
 }
 
 /* ================= BOTÕES INLINE ================= */
@@ -199,13 +199,13 @@ button:hover {
     border-radius: 6px;
     font-size: 13px;
     text-decoration: none;
-    background: rgba(56, 189, 248, 0.1);
-    color: #38bdf8;
-    border: 1px solid rgba(56, 189, 248, 0.3);
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
 }
 
 .btn-edit:hover {
-    background: #38bdf8;
+    background: #10b981;
     color: #020617;
 }
 
