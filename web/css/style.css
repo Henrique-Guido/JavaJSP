@@ -1,128 +1,140 @@
-/* ================= RESET ================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ================= BASE ================= */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #0f172a, #020617);
-    color: #e2e8f0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f0f2f5;
+    color: #1a1a2e;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* ================= CONTAINER ================= */
 .container {
-    background: rgba(15, 23, 42, 0.85);
-    backdrop-filter: blur(14px);
-    padding: 30px;
-    border-radius: 16px;
+    background: #ffffff;
+    padding: 36px 40px;
     width: 100%;
-    max-width: 420px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
-    border: 1px solid rgba(148, 163, 184, 0.1);
+    max-width: 460px;
+    border: 1px solid #d1d5db;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .container.wide {
     max-width: 1000px;
 }
 
-/* ================= TÍTULOS ================= */
 h2 {
     text-align: center;
-    margin-bottom: 25px;
-    color: #10b981;
+    margin-bottom: 28px;
+    color: #1e3a5f;
+    font-size: 18px;
     font-weight: 600;
+    letter-spacing: 0.3px;
+    border-bottom: 2px solid #1e3a5f;
+    padding-bottom: 14px;
 }
 
-/* ================= FORM ================= */
-
 .form-group {
-    margin-bottom: 18px;
+    margin-bottom: 16px;
 }
 
 label {
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: 5px;
     font-size: 13px;
-    color: #94a3b8;
+    font-weight: 500;
+    color: #374151;
 }
 
-input {
+input,
+select,
+textarea {
     width: 100%;
-    padding: 10px 12px;
-    border-radius: 8px;
-    border: 1px solid #1e293b;
-    background: #020617;
-    color: #e2e8f0;
+    padding: 9px 11px;
+    border: 1px solid #c4c9d4;
+    background: #ffffff;
+    color: #1a1a2e;
     font-size: 14px;
-    transition: all 0.25s ease;
+    font-family: inherit;
+    transition: border-color 0.2s;
 }
 
-input::placeholder {
-    color: #475569;
+input::placeholder,
+textarea::placeholder {
+    color: #9ca3af;
 }
 
-input:focus {
+input:focus,
+select:focus,
+textarea:focus {
     outline: none;
-    border-color: #10b981;
-    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.25);
+    border-color: #1e3a5f;
 }
 
-/* ================= BOTÕES ================= */
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%236b7280' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 32px;
+    cursor: pointer;
+}
+
 input[type="submit"],
 input[type="reset"],
 button {
     width: 100%;
     padding: 10px;
-    border-radius: 8px;
-    border: none;
+    border: 1px solid transparent;
     cursor: pointer;
+    font-size: 14px;
     font-weight: 500;
-    transition: 0.25s;
+    font-family: inherit;
+    transition: background 0.2s, color 0.2s;
     margin-top: 8px;
 }
 
-/* Primário */
 input[type="submit"] {
-    background: #10b981;
-    color: #020617;
+    background: #1e3a5f;
+    color: #ffffff;
+    border-color: #1e3a5f;
 }
 
 input[type="submit"]:hover {
-    background: #059669;
+    background: #16304f;
 }
 
-/* Secundário */
 input[type="reset"] {
-    background: #1e293b;
-    color: #e2e8f0;
+    background: #ffffff;
+    color: #374151;
+    border-color: #c4c9d4;
 }
 
 input[type="reset"]:hover {
-    background: #334155;
+    background: #f3f4f6;
 }
 
-/* Botão outline */
 button {
-    background: transparent;
-    border: 1px solid #10b981;
-    color: #10b981;
+    background: #ffffff;
+    color: #1e3a5f;
+    border-color: #1e3a5f;
 }
 
 button:hover {
-    background: #10b981;
-    color: #020617;
+    background: #1e3a5f;
+    color: #ffffff;
 }
 
-/* ================= AÇÕES ================= */
 .actions {
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .actions a {
@@ -130,28 +142,57 @@ button:hover {
     display: block;
 }
 
-/* ================= STATUS ================= */
-.status-box {
-    margin-top: 15px;
-    padding: 15px;
-    border-radius: 10px;
-    font-size: 14px;
-    text-align: center;
+.actions button {
+    margin-top: 0;
 }
 
-.status-box.loading {
-    background: rgba(16, 185, 129, 0.08);
-    border: 1px solid rgba(16, 185, 129, 0.3);
-    color: #10b981;
+.status-box {
+    padding: 16px;
+    font-size: 14px;
+    border-left: 4px solid transparent;
+    margin-bottom: 20px;
+}
+
+.status-box h2 {
+    border: none;
+    padding: 0;
+    margin-bottom: 10px;
+    font-size: 15px;
+    text-align: left;
+}
+
+.status-box p {
+    margin-top: 6px;
+    color: #374151;
+    font-size: 14px;
 }
 
 .status-box.success {
-    background: rgba(34, 197, 94, 0.08);
-    border: 1px solid rgba(34, 197, 94, 0.3);
-    color: #22c55e;
+    background: #f0faf4;
+    border-color: #2d7a4f;
+    color: #1a4731;
 }
 
-/* ================= TABELA ================= */
+.status-box.success h2 {
+    color: #1a4731;
+}
+
+.status-box.error {
+    background: #fff5f5;
+    border-color: #c0392b;
+    color: #7b1c1c;
+}
+
+.status-box.error h2 {
+    color: #7b1c1c;
+}
+
+.status-box.loading {
+    background: #f0f4ff;
+    border-color: #1e3a5f;
+    color: #1e3a5f;
+}
+
 .table-wrapper {
     margin-top: 20px;
     overflow-x: auto;
@@ -163,79 +204,63 @@ button:hover {
     font-size: 14px;
 }
 
-/* Cabeçalho */
 .modern-table thead {
-    background: rgba(16, 185, 129, 0.1);
+    background: #1e3a5f;
 }
 
 .modern-table th {
-    padding: 12px;
+    padding: 11px 14px;
     text-align: left;
-    color: #10b981;
+    color: #ffffff;
     font-weight: 500;
-    border-bottom: 1px solid rgba(148, 163, 184, 0.2);
 }
 
-/* Linhas */
 .modern-table td {
-    padding: 12px;
-    border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+    padding: 10px 14px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #1a1a2e;
 }
 
-/* Hover */
 .modern-table tbody tr:hover {
-    background: rgba(16, 185, 129, 0.05);
+    background: #f6f8fb;
 }
 
-/* ================= BOTÕES INLINE ================= */
 .actions-inline {
     display: flex;
-    gap: 10px;
+    gap: 8px;
 }
 
-/* Editar */
 .btn-edit {
-    padding: 5px 10px;
-    border-radius: 6px;
+    padding: 4px 10px;
     font-size: 13px;
     text-decoration: none;
-    background: rgba(16, 185, 129, 0.1);
-    color: #10b981;
-    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #1e3a5f;
+    border: 1px solid #1e3a5f;
+    background: #ffffff;
 }
 
 .btn-edit:hover {
-    background: #10b981;
-    color: #020617;
+    background: #1e3a5f;
+    color: #ffffff;
 }
 
-/* Excluir */
 .btn-delete {
-    padding: 5px 10px;
-    border-radius: 6px;
+    padding: 4px 10px;
     font-size: 13px;
     text-decoration: none;
-    background: rgba(239, 68, 68, 0.1);
-    color: #ef4444;
-    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #c0392b;
+    border: 1px solid #c0392b;
+    background: #ffffff;
 }
 
 .btn-delete:hover {
-    background: #ef4444;
-    color: #020617;
+    background: #c0392b;
+    color: #ffffff;
 }
 
-/* ================= RESPONSIVO ================= */
-@media (max-width: 480px) {
+@media (max-width: 520px) {
     .container {
         margin: 20px;
-        padding: 25px;
+        padding: 24px 20px;
     }
-}
-
-/* Estado de erro */
-.status-box.error {
-    background: rgba(239, 68, 68, 0.08);
-    border: 1px solid rgba(239, 68, 68, 0.3);
-    color: #ef4444;
 }

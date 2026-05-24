@@ -28,6 +28,8 @@ controller.salvar(titulo, descricao, prioridade, status, prazo, responsavel);
 
     <div class="status-box success">
         <h2>Tarefa cadastrada com sucesso!</h2>
+        <p><strong>Tarefa:</strong> <%= titulo %></p>
+        <p><strong>Responsável:</strong> <%= responsavel %></p>
     </div>
 
     <div class="actions">

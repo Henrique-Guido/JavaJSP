@@ -1,8 +1,12 @@
 package dao;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
 import model.Tarefa;
 import util.Conexao;
 
@@ -22,7 +26,6 @@ public class TarefaDAO {
             stmt.executeUpdate();
             stmt.close();
             conn.close();
-            System.out.println("Tarefa inserida com sucesso");
         } catch (Exception e) {
             System.out.println("Erro inserir: " + e.getMessage());
         }

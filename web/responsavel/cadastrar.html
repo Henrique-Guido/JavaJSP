@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsáveis - Novo Responsável</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <main class="container">
+        <h2>Novo Responsável</h2>
+
+        <form action="valida.jsp" method="post">
+
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telefone">Telefone</label>
+                <input type="text" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+            </div>
+
+            <div class="form-group">
+                <label for="cargo">Cargo</label>
+                <select id="cargo" name="cargo">
+                    <option value="Analista">Analista</option>
+                    <option value="Desenvolvedor" selected>Desenvolvedor</option>
+                    <option value="Gerente">Gerente</option>
+                    <option value="Outro">Outro</option>
+                </select>
+            </div>
+
+            <div class="form-actions">
+                <input type="submit" value="Cadastrar">
+                <input type="reset" value="Limpar">
+            </div>
+
+        </form>
+
+        <div class="actions">
+            <a href="listar.jsp">
+                <button type="button">Ver Responsáveis</button>
+            </a>
+            <a href="../index.html">
+                <button type="button">Tarefas</button>
+            </a>
+        </div>
+
+    </main>
+
+</body>
+</html>

@@ -1,10 +1,8 @@
-CREATE DATABASE IF NOT EXISTS listatarefas
-    CHARACTER SET utf8mb4
-    COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE listatarefas;
 
 USE listatarefas;
 
-CREATE TABLE IF NOT EXISTS tarefas (
+CREATE TABLE tarefas (
     id          INT AUTO_INCREMENT PRIMARY KEY,
     titulo      VARCHAR(200)  NOT NULL,
     descricao   TEXT,
@@ -12,4 +10,12 @@ CREATE TABLE IF NOT EXISTS tarefas (
     status      VARCHAR(30),
     prazo       DATE,
     responsavel VARCHAR(100)  NOT NULL
+);
+
+CREATE TABLE responsaveis (
+    id        INT AUTO_INCREMENT PRIMARY KEY,
+    nome      VARCHAR(200) NOT NULL,
+    email     VARCHAR(200) NOT NULL,
+    telefone  VARCHAR(20),
+    cargo     VARCHAR(50)
 );
