@@ -1,10 +1,8 @@
-CREATE DATABASE IF NOT EXISTS petshop
-    CHARACTER SET utf8mb4
-    COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE petshop;
 
 USE petshop;
 
-CREATE TABLE IF NOT EXISTS pets (
+CREATE TABLE pets (
     id          INT AUTO_INCREMENT PRIMARY KEY,
     nome_animal VARCHAR(100)  NOT NULL,
     especie     VARCHAR(50)   NOT NULL,

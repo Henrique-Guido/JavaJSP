@@ -14,9 +14,7 @@
 <body>
 
 <main class="container wide">
-
     <h2>Pets Cadastrados</h2>
-
     <div class="table-wrapper">
         <table class="modern-table">
             <thead>
@@ -33,13 +31,12 @@
                 </tr>
             </thead>
             <tbody>
+            <%
+            PetController controller = new PetController();
+            List<Pet> lista = controller.listar();
 
-<%
-PetController controller = new PetController();
-List<Pet> lista = controller.listar();
-
-for(Pet f : lista){
-%>
+            for(Pet f : lista){
+            %>
                 <tr>
                     <td><%= f.getId() %></td>
                     <td><%= f.getNomeAnimal() %></td>
@@ -51,28 +48,20 @@ for(Pet f : lista){
                     <td><%= f.getPeso() %></td>
                     <td class="actions-inline">
                         <a href="editar.jsp?id=<%= f.getId() %>" class="btn-edit">Editar</a>
-                        <a href="excluir.jsp?id=<%= f.getId() %>"
-                           class="btn-delete"
-                           onclick="return confirm('Excluir <%= f.getNomeAnimal() %>?')">
-                           Excluir
-                        </a>
+                        <a href="excluir.jsp?id=<%= f.getId() %>" class="btn-delete">Excluir</a>
                     </td>
                 </tr>
-<%
-}
-%>
-
+            <%
+            }
+            %>
             </tbody>
         </table>
     </div>
-
     <div class="actions">
         <a href="index.html">
             <button type="button">Voltar</button>
         </a>
     </div>
-
 </main>
-
 </body>
 </html>
