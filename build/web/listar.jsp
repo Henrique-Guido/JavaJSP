@@ -1,61 +1,55 @@
 <%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
-<%@page import="model.Pet"%>
-<%@page import="controller.PetController"%>
+<%@page import="model.Tarefa"%>
+<%@page import="controller.TarefaController"%>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PetShop - Lista de Pets</title>
+    <title>Lista de Tarefas</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <main class="container wide">
 
-    <h2>Pets Cadastrados</h2>
+    <h2>Tarefas Cadastradas</h2>
 
     <div class="table-wrapper">
         <table class="modern-table">
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Nome do Animal</th>
-                    <th>Espécie</th>
-                    <th>Raça</th>
-                    <th>Nome do Tutor</th>
-                    <th>Email do Tutor</th>
-                    <th>Porte</th>
-                    <th>Peso (kg)</th>
+                    <th>Título</th>
+                    <th>Descrição</th>
+                    <th>Prioridade</th>
+                    <th>Status</th>
+                    <th>Prazo</th>
+                    <th>Responsável</th>
                     <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
 
 <%
-PetController controller = new PetController();
-List<Pet> lista = controller.listar();
+TarefaController controller = new TarefaController();
+List<Tarefa> lista = controller.listar();
 
-for(Pet f : lista){
+for(Tarefa t : lista){
 %>
                 <tr>
-                    <td><%= f.getId() %></td>
-                    <td><%= f.getNomeAnimal() %></td>
-                    <td><%= f.getEspecie() %></td>
-                    <td><%= f.getRaca() %></td>
-                    <td><%= f.getTutorNome() %></td>
-                    <td><%= f.getTutorEmail() %></td>
-                    <td><%= f.getPorte() %></td>
-                    <td><%= f.getPeso() %></td>
+                    <td><%= t.getId() %></td>
+                    <td><%= t.getTitulo() %></td>
+                    <td><%= t.getDescricao() %></td>
+                    <td><%= t.getPrioridade() %></td>
+                    <td><%= t.getStatus() %></td>
+                    <td><%= t.getPrazo() %></td>
+                    <td><%= t.getResponsavel() %></td>
                     <td class="actions-inline">
-                        <a href="editar.jsp?id=<%= f.getId() %>" class="btn-edit">Editar</a>
-                        <a href="excluir.jsp?id=<%= f.getId() %>"
-                           class="btn-delete"
-                           onclick="return confirm('Excluir <%= f.getNomeAnimal() %>?')">
-                           Excluir
-                        </a>
+                        <a href="editar.jsp?id=<%= t.getId() %>" class="btn-edit">Editar</a>
+                        <a href="excluir.jsp?id=<%= t.getId() %>" class="btn-delete">Excluir</a>
                     </td>
                 </tr>
 <%

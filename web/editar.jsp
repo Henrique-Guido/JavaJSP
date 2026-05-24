@@ -1,5 +1,5 @@
-<%@page import="model.Pet"%>
-<%@page import="controller.PetController"%>
+<%@page import="model.Tarefa"%>
+<%@page import="controller.TarefaController"%>
 <%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -7,65 +7,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PetShop - Editar Pet</title>
+    <title>Lista de Tarefas - Editar</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <main class="container">
 
-    <h2>Editar Informações do Pet</h2>
+    <h2>Editar Tarefa</h2>
 
 <%
     int id = Integer.parseInt(request.getParameter("id"));
-    PetController controller = new PetController();
-    Pet f = controller.buscar(id);
+    TarefaController controller = new TarefaController();
+    Tarefa t = controller.buscar(id);
 %>
 
-<% if(f != null) { %>
+<% if(t != null) { %>
 
 <form action="atualizar.jsp" method="post">
 
-    <input type="hidden" name="id" value="<%= f.getId() %>">
+    <input type="hidden" name="id" value="<%= t.getId() %>">
 
     <div class="form-group">
         <label>ID</label>
-        <input type="text" value="<%= f.getId() %>" disabled>
+        <input type="text" value="<%= t.getId() %>" disabled>
     </div>
 
     <div class="form-group">
-        <label for="nomeAnimal">Nome do Animal</label>
-        <input type="text" id="nomeAnimal" name="nomeAnimal" value="<%= f.getNomeAnimal() %>" required>
+        <label for="titulo">Título</label>
+        <input type="text" id="titulo" name="titulo" value="<%= t.getTitulo() %>" required>
     </div>
 
     <div class="form-group">
-        <label for="especie">Espécie</label>
-        <input type="text" id="especie" name="especie" value="<%= f.getEspecie() %>" required>
+        <label for="descricao">Descrição</label>
+        <input type="text" id="descricao" name="descricao" value="<%= t.getDescricao() %>">
     </div>
 
     <div class="form-group">
-        <label for="raca">Raça</label>
-        <input type="text" id="raca" name="raca" value="<%= f.getRaca() %>" required>
+        <label for="prioridade">Prioridade</label>
+        <select id="prioridade" name="prioridade">
+            <option value="Baixa" <%= "Baixa".equals(t.getPrioridade()) ? "selected" : "" %>>Baixa</option>
+            <option value="Média" <%= "Média".equals(t.getPrioridade()) ? "selected" : "" %>>Média</option>
+            <option value="Alta" <%= "Alta".equals(t.getPrioridade()) ? "selected" : "" %>>Alta</option>
+        </select>
     </div>
 
     <div class="form-group">
-        <label for="tutorNome">Nome do Tutor</label>
-        <input type="text" id="tutorNome" name="tutorNome" value="<%= f.getTutorNome() %>" required>
+        <label for="status">Status</label>
+        <select id="status" name="status">
+            <option value="Pendente" <%= "Pendente".equals(t.getStatus()) ? "selected" : "" %>>Pendente</option>
+            <option value="Em Andamento" <%= "Em Andamento".equals(t.getStatus()) ? "selected" : "" %>>Em Andamento</option>
+            <option value="Concluída" <%= "Concluída".equals(t.getStatus()) ? "selected" : "" %>>Concluída</option>
+        </select>
     </div>
 
     <div class="form-group">
-        <label for="tutorEmail">Email do Tutor</label>
-        <input type="email" id="tutorEmail" name="tutorEmail" value="<%= f.getTutorEmail() %>">
+        <label for="prazo">Prazo</label>
+        <input type="date" id="prazo" name="prazo" value="<%= t.getPrazo() %>">
     </div>
 
     <div class="form-group">
-        <label for="porte">Porte</label>
-        <input type="text" id="porte" name="porte" value="<%= f.getPorte() %>">
-    </div>
-
-    <div class="form-group">
-        <label for="peso">Peso (kg)</label>
-        <input type="number" id="peso" name="peso" value="<%= f.getPeso() %>" step="0.1">
+        <label for="responsavel">Responsável</label>
+        <input type="text" id="responsavel" name="responsavel" value="<%= t.getResponsavel() %>" required>
     </div>
 
     <div class="form-actions">
@@ -77,14 +80,14 @@
 <% } else { %>
 
 <div class="status-box error">
-    <h3>Pet não encontrado</h3>
+    <h3>Tarefa não encontrada</h3>
 </div>
 
 <% } %>
 
 <div class="actions">
     <a href="listar.jsp">
-        <button type="button">Ver Pets</button>
+        <button type="button">Ver Tarefas</button>
     </a>
 </div>
 

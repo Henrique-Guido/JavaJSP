@@ -1,4 +1,4 @@
-<%@page import="controller.PetController"%>
+<%@page import="controller.TarefaController"%>
 <%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PetShop - Excluir Pet</title>
+    <title>Lista de Tarefas - Excluir</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -16,17 +16,17 @@
 <%
 int id = Integer.parseInt(request.getParameter("id"));
 
-PetController controller = new PetController();
+TarefaController controller = new TarefaController();
 controller.excluir(id);
 %>
 
     <div class="status-box success">
-        <h2>Pet excluído com sucesso</h2>
+        <h2>Tarefa excluída com sucesso</h2>
     </div>
 
     <div class="actions">
         <a href="listar.jsp">
-            <button type="button">Ver Pets</button>
+            <button type="button">Ver Tarefas</button>
         </a>
     </div>
 
