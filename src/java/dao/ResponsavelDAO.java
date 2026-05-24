@@ -1,11 +1,16 @@
 package dao;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
 import model.Responsavel;
 import util.Conexao;
 
+// classe DAO para responsável contendo toda a lógica de banco de dados 
 public class ResponsavelDAO {
 
     public void inserir(Responsavel r) {

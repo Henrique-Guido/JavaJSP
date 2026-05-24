@@ -10,6 +10,7 @@ import java.util.List;
 import model.Tarefa;
 import util.Conexao;
 
+// classe DAO para tarefas contendo toda a lógica de banco de dados 
 public class TarefaDAO {
 
     public void inserir(Tarefa t) {

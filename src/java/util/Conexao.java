@@ -3,6 +3,8 @@ package util;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+// classe de conexão com o banco mariadb/mysql
+// ajuste login e senha conforme seu ambiente
 public class Conexao {
     public static Connection conectar() {
         try {

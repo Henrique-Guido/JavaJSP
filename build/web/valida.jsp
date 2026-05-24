@@ -26,6 +26,7 @@ TarefaController controller = new TarefaController();
 controller.salvar(titulo, descricao, prioridade, status, prazo, responsavel);
 %>
 
+    <!-- retorna alguns dos dados cadastrados como confirmação -->
     <div class="status-box success">
         <h2>Tarefa cadastrada com sucesso!</h2>
         <p><strong>Tarefa:</strong> <%= titulo %></p>

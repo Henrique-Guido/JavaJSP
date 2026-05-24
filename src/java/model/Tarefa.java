@@ -1,5 +1,6 @@
 package model;
 
+// getters e setters para a tarefa
 public class Tarefa {
     private int id;
     private String titulo;

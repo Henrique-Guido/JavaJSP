@@ -1,5 +1,6 @@
 package model;
 
+// getters e setters para responsável
 public class Responsavel {
     private int id;
     private String nome;
